@@ -55,7 +55,8 @@ while true; do
         1) create_student ;;
         2) view_students ;;
         3) delete_student ;;
-        4) exit 0 ;;
+	4) update_student ;;
+        5) exit 0 ;;
         *) echo "Invalid option. Please try again." ;;
     esac
 done
