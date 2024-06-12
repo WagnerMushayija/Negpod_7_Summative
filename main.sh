@@ -6,7 +6,7 @@ STUDENT_FILE="students-list_1023.txt"
 # Function to create a student record
 create_student() {
     read -p "Enter student email: " email
-  i  read -p "Enter student age: " age
+    read -p "Enter student age: " age
     read -p "Enter student ID: " id
     
     # Save the student record
