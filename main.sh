@@ -3,6 +3,32 @@
 # File to store student records
 STUDENT_FILE="students-list_1023.txt"
 
+# Function to create a student record
+create_student() {
+    read -p "Enter student email: " email
+    read -p "Enter student age: " age
+    read -p "Enter student ID: " id
+    
+    # Save the student record
+    echo "$id,$email,$age" >> $STUDENT_FILE
+    echo "Student record created successfully."
+}
+
+
+# Function to delete a student record
+delete_student() {
+    read -p "Enter student ID to delete: " id
+    
+    if [ -f $STUDENT_FILE ]; then
+        grep -v "^$id," $STUDENT_FILE > temp.txt
+        mv temp.txt $STUDENT_FILE
+        echo "Student record deleted successfully."
+    else
+        echo "No student records found."
+    fi
+}
+
+
 #Main menu
 while true; do
 	echo "----------------------------"
@@ -24,16 +50,3 @@ while true; do
         5) exit 0 ;;
         *) echo "Invalid option. Please try again." ;;
     esac
-    # Function to delete a student record
-delete_student() {
-    read -p "Enter student ID to delete: " id
-    
-    if [ -f $STUDENT_FILE ]; then
-        grep -v "^$id," $STUDENT_FILE > temp.txt
-        mv temp.txt $STUDENT_FILE
-        echo "Student record deleted successfully."
-    else
-        echo "No student records found."
-    fi
-}
-
