@@ -14,3 +14,16 @@ while true; do
     echo "4. Update Student"
     echo "5. Exit"
     read -p "Choose an option: " option
+    # Function to delete a student record
+delete_student() {
+    read -p "Enter student ID to delete: " id
+    
+    if [ -f $STUDENT_FILE ]; then
+        grep -v "^$id," $STUDENT_FILE > temp.txt
+        mv temp.txt $STUDENT_FILE
+        echo "Student record deleted successfully."
+    else
+        echo "No student records found."
+    fi
+}
+
