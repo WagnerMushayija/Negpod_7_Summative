@@ -14,6 +14,14 @@ create_student() {
     echo "Student record created successfully."
 }
 
+# Function to view all students
+view_students() {
+    if [ -f $STUDENT_FILE ]; then
+        cat $STUDENT_FILE
+    else
+        echo "No student records found."
+    fi
+}
 
 # Function to delete a student record
 delete_student() {
