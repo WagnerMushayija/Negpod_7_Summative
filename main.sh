@@ -1,5 +1,5 @@
 #!/bin/bash
-.
+
 # File to store student records
 STUDENT_FILE="students-list_1023.txt"
 
@@ -24,6 +24,8 @@ view_students() {
 }
 
 # Function to delete a student record
+
+# Function will delete a student record
 delete_student() {
     read -p "Enter student ID to delete: " id
     
@@ -31,6 +33,22 @@ delete_student() {
         grep -v "^$id," $STUDENT_FILE > temp.txt
         mv temp.txt $STUDENT_FILE
         echo "Student record deleted successfully."
+    else
+        echo "No student records found."
+    fi
+}
+update_student() {
+    read -p "Enter student ID to update: " id
+
+    if [ -f $STUDENT_FILE ]; then
+        grep -v "^$id," $STUDENT_FILE > temp.txt
+
+        read -p "Enter new student email: " email
+        read -p "Enter new student age: " age
+
+        echo "$id,$email,$age" >> temp.txt
+        mv temp.txt $STUDENT_FILE
+        echo "Student record updated successfully."
     else
         echo "No student records found."
     fi
@@ -54,7 +72,7 @@ while true; do
         1) create_student ;;
         2) view_students ;;
         3) delete_student ;;
-        4) update_student ;;
+	4) update_student ;;
         5) exit 0 ;;
         *) echo "Invalid option. Please try again." ;;
     esac
