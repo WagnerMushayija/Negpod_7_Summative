@@ -6,7 +6,7 @@ STUDENT_FILE="students-list_1023.txt"
 # Function to create a student record
 create_student() {
     read -p "Enter student email: " email
-    read -p "Enter student age: " age
+  i  read -p "Enter student age: " age
     read -p "Enter student ID: " id
     
     # Save the student record
@@ -32,6 +32,22 @@ delete_student() {
         grep -v "^$id," $STUDENT_FILE > temp.txt
         mv temp.txt $STUDENT_FILE
         echo "Student record deleted successfully."
+    else
+        echo "No student records found."
+    fi
+}
+update_student() {
+    read -p "Enter student ID to update: " id
+
+    if [ -f $STUDENT_FILE ]; then
+        grep -v "^$id," $STUDENT_FILE > temp.txt
+
+        read -p "Enter new student email: " email
+        read -p "Enter new student age: " age
+
+        echo "$id,$email,$age" >> temp.txt
+        mv temp.txt $STUDENT_FILE
+        echo "Student record updated successfully."
     else
         echo "No student records found."
     fi
