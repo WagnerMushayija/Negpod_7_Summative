@@ -50,3 +50,4 @@ while true; do
         5) exit 0 ;;
         *) echo "Invalid option. Please try again." ;;
     esac
+done
