@@ -24,8 +24,7 @@ view_students() {
 }
 
 # Function to delete a student record
-
-# line to delete student records
+#Delete student records
 delete_student() {
     read -p "Enter student ID to delete: " id
     
