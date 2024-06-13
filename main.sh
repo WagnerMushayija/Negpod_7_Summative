@@ -1,5 +1,4 @@
 #!/bin/bash
-
 STUDENT_FILE="students-list_1023.txt"
 while true;
 do
@@ -12,17 +11,7 @@ create_student() {
     echo "Enter student ID:"
     read id
     echo "$email, $age, $id" >> $STUDENT_FILE
-    echo "Student record created."
-    sleep 1
-         echo "Press 1 to exit or any other number to continue"
-         read main
-        if [ "$main" -eq 1 ]
-          then
-          echo "Thank you for using Alu registration system"
-          sleep 1
-	  echo "goodbye"
-          exit
-       fi
+    echo "Student record created.
 }
 #view student record
 view_students() {
