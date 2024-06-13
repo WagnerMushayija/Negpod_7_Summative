@@ -17,14 +17,22 @@ create_student() {
 # Function to view all students
 view_students() {
     if [ -f $STUDENT_FILE ]; then
-        cat $STUDENT_FILE
+        echo "-------------------------------------------------"
+        printf "%-10s %-30s %-5s\n" "Student ID" "Email" "Age"
+        echo "-------------------------------------------------"
+        while IFS=, read -r id email age; do
+            printf "%-10s %-30s %-5s\n" "$id" "$email" "$age"
+        done < $STUDENT_FILE
+        echo "-------------------------------------------------"
     else
         echo "No student records found."
     fi
 }
 
+
 # Function to delete a student record
-#Delete student records
+
+# Delete student record
 delete_student() {
     read -p "Enter student ID to delete: " id
     
@@ -32,6 +40,22 @@ delete_student() {
         grep -v "^$id," $STUDENT_FILE > temp.txt
         mv temp.txt $STUDENT_FILE
         echo "Student record deleted successfully."
+    else
+        echo "No student records found."
+    fi
+}
+update_student() {
+    read -p "Enter student ID to update: " id
+
+    if [ -f $STUDENT_FILE ]; then
+        grep -v "^$id," $STUDENT_FILE > temp.txt
+
+        read -p "Enter new student email: " email
+        read -p "Enter new student age: " age
+
+        echo "$id,$email,$age" >> temp.txt
+        mv temp.txt $STUDENT_FILE
+        echo "Student record updated successfully."
     else
         echo "No student records found."
     fi
