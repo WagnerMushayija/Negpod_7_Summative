@@ -20,7 +20,6 @@ create_student() {
           then
           echo "Thank you for using Alu registration system"
           sleep 1
-          echo "goodbye!"
           exit
        fi
 }
