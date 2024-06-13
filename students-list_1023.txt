@@ -2,3 +2,5 @@
 111,gigiwagner32@gmail.com,10
 123,david@alustudent.com,25
 009,david@gmail.com,22
+k.chirchir@alustudent.com, 20, 2004
+manzidavid@alustudent.com, 20, 2005
