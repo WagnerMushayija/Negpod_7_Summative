@@ -11,14 +11,8 @@ create_student() {
     echo "Enter student ID:"
     read id
     echo "$email, $age, $id" >> $STUDENT_FILE
-<<<<<<< HEAD:main.sh
-<<<<<<< HEAD
-    echo "Student record created.
-=======
-    echo "Student record created."
->>>>>>> f8c6c48446712059f24b760ecc1b3c4773087bc7
-=======
-    echo "Student record created."sleep 1
+
+    echo "Student record created"
          echo "Press 1 to exit or any other number to continue"
          read main
         if [ "$main" -eq 1 ]
@@ -28,7 +22,6 @@ create_student() {
           echo "goodbye"
           exit
        fi
->>>>>>> 4e557f769518b5e2b1979844641c45986f5dff24:negpod_7-q1/main.sh
 }
 #view student record
 view_students() {
