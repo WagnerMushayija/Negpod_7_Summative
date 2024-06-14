@@ -4,13 +4,13 @@ STUDENT_FILE="students-list_1023.txt"
 
 # create student record
 create_student() {
+    echo "Enter student ID:"
+    read id
     echo "Enter student email:"
     read email
     echo "Enter student age:"
     read age
-    echo "Enter student ID:"
-    read id
-    echo "$email, $age, $id" >> $STUDENT_FILE
+    echo "$id, $email, $age" >> $STUDENT_FILE
 
     echo "Student record created"
          echo "Press 1 to exit or any other number to continue"
