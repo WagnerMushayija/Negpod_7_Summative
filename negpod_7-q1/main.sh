@@ -42,15 +42,12 @@ view_students() {
 
 #delete student record
 delete_student() {
-    echo "Enter student ID to delete:"
-    read id
-    if [ -f $STUDENT_FILE ]; then
-        if grep -q ", $id" $STUDENT_FILE; then
-            grep -v ", $id" $STUDENT_FILE > temp.txt && mv temp.txt $STUDENT_FILE
-            echo "Student record deleted."
-        else
-            echo "Student ID not found."
-        fi
+    read -p "Enter student ID to delete: " id
+
+      if [ -f $STUDENT_FILE ]; then
+        grep -v "^$id," $STUDENT_FILE > temp.txt
+        mv temp.txt $STUDENT_FILE
+        echo "Student record deleted successfully."
     else
         echo "No student records found."
     fi
