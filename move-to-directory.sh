@@ -18,6 +18,7 @@ done
 
 
 # Create the directory if it doesn't exist before
+# or  Make the directory if it does not  exit before
 mkdir -p negpod_7-q1
 
 # Move the files to the directory
