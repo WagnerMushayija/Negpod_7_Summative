@@ -52,23 +52,18 @@ delete_student() {
         echo "No student records found."
     fi
 }
-#update student record
 update_student() {
-    echo "Enter student ID to update:"
-    read id
+    read -p "Enter student ID to update: " id
+
     if [ -f $STUDENT_FILE ]; then
-        if grep -q ", $id" $STUDENT_FILE; then
-            grep -v ", $id" $STUDENT_FILE > temp.txt
-            mv temp.txt $STUDENT_FILE
-            echo "Enter new email:"
-            read new_email
-            echo "Enter new age:"
-            read new_age
-            echo "$new_email, $new_age, $id" >> $STUDENT_FILE
-            echo "Student record updated."
-        else
-            echo "Student ID not found."
-        fi
+        grep -v "^$id," $STUDENT_FILE > temp.txt
+
+        read -p "Enter new student email: " email
+        read -p "Enter new student age: " age
+
+        echo "$id,$email,$age" >> temp.txt
+        mv temp.txt $STUDENT_FILE
+        echo "Student record updated successfully."
     else
         echo "No student records found."
     fi
