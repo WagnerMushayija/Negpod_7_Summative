@@ -70,13 +70,17 @@ update_student() {
 }
 
 while true; do
-    echo "1. Create Student Record"
-    echo "2. View All Students"
-    echo "3. Delete Student Record"
-    echo "4. Update Student Record"
-    echo "5. Exit"
-     read -p "Choose an option: " option
-    case $option in
+    echo "=========================="
+    echo "|   STUDENT MANAGEMENT   |"
+    echo "=========================="
+    echo "[1] Create Student Record "
+    echo "[2] View All Students"
+    echo "[3] Delete Student Record"
+    echo "[4] Update Student Record"
+    echo "[5] Exit"
+    echo "=========================="
+    read choice
+    case $choice in
         1) create_student ;;
         2) view_students ;;
         3) delete_student ;;

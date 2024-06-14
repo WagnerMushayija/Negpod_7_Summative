@@ -1,7 +1,6 @@
-111,gigiwagner32@gmail.com,10
 009,david@gmail.com,22
 
-2345, kelvinrwihimmba@gmail.com, 21
 1, 2223e, 22
 1004, manzidavid@gmail.com, 22
 2004, wagner@gmail.com, 21
+2345,kelvinrwihimmba@gmail.com,29
