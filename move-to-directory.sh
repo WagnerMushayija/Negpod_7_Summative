@@ -1,11 +1,11 @@
-#shell script to automatically move the all specified files to the "negpod_4-q1" directory 
-destination_dir="negpod_4-q1"
+#shell script to automatically move the all specified files to the "negpod_7-q1" directory 
+destination_dir="negpod_7-q1"
 
 if [ ! -d "$destination_dir" ]; then
   mkdir "$destination_dir"
 fi
 
-files_to_move=("main.sh" "Students-list_0923.txt" "Select-emails.sh" "student-emails.txt")
+files_to_move=("main.sh" "students-list_1023.txt" "select-emails.sh" "student-emails.txt")
 
 for file in "${files_to_move[@]}"; do
   if [ -e "$file" ]; then
@@ -18,9 +18,9 @@ done
 
 
 # Create the directory if it doesn't exist before
-mkdir -p negpod_id-q1
+mkdir -p negpod_7-q1
 
 # Move the files to the directory
-mv main.sh students-list_0923.txt select-emails.sh student-emails.txt negpod_id-q1
+mv main.sh students-list_1023.txt select-emails.sh student-emails.txt negpod_7-q1
 
-echo "Files moved to negpod_id-q1 directory." 
+echo "Files moved to negpod_7-q1 directory." 
