@@ -26,11 +26,18 @@ create_student() {
 #view student record
 view_students() {
     if [ -f $STUDENT_FILE ]; then
-        cat $STUDENT_FILE
+        echo "-------------------------------------------------"
+        printf "%-10s %-30s %-5s\n" "Student ID" "Email" "Age"
+        echo "-------------------------------------------------"
+        while IFS=, read -r id email age; do
+            printf "%-10s %-30s %-5s\n" "$id" "$email" "$age"
+        done < $STUDENT_FILE
+        echo "-------------------------------------------------"
     else
         echo "No student records found."
     fi
 }
+
 #delete student record
 delete_student() {
     echo "Enter student ID to delete:"
@@ -74,7 +81,7 @@ while true; do
     echo "3. Delete Student Record"
     echo "4. Update Student Record"
     echo "5. Exit"
-    read choice
+    read -p "Choose an option: " option
     case $choice in
         1) create_student ;;
         2) view_students ;;
