@@ -1,8 +1,8 @@
 #!/bin/bash
+
 STUDENT_FILE="students-list_1023.txt"
-while true;
-do
-#create student record
+
+# create student record
 create_student() {
     echo "Enter student email:"
     read email
@@ -23,7 +23,9 @@ create_student() {
           exit
        fi
 }
+
 #view student record
+
 view_students() {
     if [ -f $STUDENT_FILE ]; then
         echo "-------------------------------------------------"
@@ -81,8 +83,8 @@ while true; do
     echo "3. Delete Student Record"
     echo "4. Update Student Record"
     echo "5. Exit"
-    read -p "Choose an option: " option
-    case $choice in
+     read -p "Choose an option: " option
+    case $option in
         1) create_student ;;
         2) view_students ;;
         3) delete_student ;;
