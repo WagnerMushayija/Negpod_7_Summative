@@ -8,8 +8,16 @@ create_student() {
     read id
     echo "Enter student email:"
     read email
-    echo "Enter student age:"
-    read age
+    
+    while true; do
+        echo "Enter student age:"
+        read age
+        if [[ $age =~ ^[0-9]+$ ]]; then
+            break
+        else
+            echo "Please enter correct age(Age should be a number."
+        fi
+    done
     echo "$id, $email, $age" >> $STUDENT_FILE
 
     echo "Student record created"
@@ -17,9 +25,9 @@ create_student() {
          read main
         if [ "$main" -eq 1 ]
           then
-          echo "Thank you for using Alu registration system"
+          echo ""Thank you for using Alu registration system! 🎓"
           sleep 1
-          echo "goodbye"
+          echo ""Goodbye! 👋"
           exit
        fi
 }
