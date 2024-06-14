@@ -11,7 +11,11 @@ create_student() {
     echo "Enter student ID:"
     read id
     echo "$email, $age, $id" >> $STUDENT_FILE
+<<<<<<< HEAD
     echo "Student record created.
+=======
+    echo "Student record created."
+>>>>>>> f8c6c48446712059f24b760ecc1b3c4773087bc7
 }
 #view student record
 view_students() {
